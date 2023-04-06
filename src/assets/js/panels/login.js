@@ -200,7 +200,7 @@ class Login {
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Coloque seu nick para entrar"
+                infoLogin.innerHTML = "Atenção, é necessário colocar algum nick!"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -208,7 +208,7 @@ class Login {
             }
 
             if (mailInput.value.length < 3) {
-                infoLogin.innerHTML = "Seu nick deve ter pelo menos 3 caracteres"
+                infoLogin.innerHTML = "Seu nick deve ter pelo menos 3 caracteres!"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
