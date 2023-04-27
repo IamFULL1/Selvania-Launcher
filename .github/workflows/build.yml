@@ -53,6 +53,6 @@ jobs:
 
       - name: Build
         env:
-          GH_TOKEN: ${{ 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 }}
+          GH_TOKEN: ${{ hiQwWnBPvxYat3UNpI4lEXtAPDmZOx3KrRH0 }}
         run: npm run build
         shell: bash
