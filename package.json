@@ -1,8 +1,8 @@
 {
-    "name": "VicioLauncher",
-    "preductname": "Vício Launcher",
-    "version": "1.2.0",
-    "description": "Vício Launcher - Pixelmon server",
+    "name": ".VicioLauncher",
+    "preductname": "VicioLauncher",
+    "version": "1.2.1",
+    "description": "Vicio Launcher - Pixelmon server",
     "main": "src/app.js",
     "author": "IamFULL",
     "url": "https://launcher.pokevicio.com/launcher",
