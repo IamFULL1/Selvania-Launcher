@@ -5,25 +5,6 @@ on:
     branches: [ master ]
 
 jobs:
-  create-release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Get version
-        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
-      
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.version }}
-          release_name: release ${{ env.version }}
-          draft: false
-          prerelease: ${{ contains(env.version, 'beta') || contains(env.version, 'alpha') }}
 
   build-launcher:
     needs: create-release
@@ -53,6 +34,6 @@ jobs:
 
       - name: Build
         env:
-          GH_TOKEN: ${{ hiQwWnBPvxYat3UNpI4lEXtAPDmZOx3KrRH0 }}
+          GH_TOKEN: ${{ secrets.github_token }}
         run: npm run build
         shell: bash
