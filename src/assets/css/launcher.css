@@ -57,10 +57,14 @@ img {
 }
 
 .icon-close:hover {
+    transition: all 0.7s cubic-bezier(0.2, 0.3, 0, 0.49);
     background: #e21212;
 }
 
-.icon-minimize:hover,
+.icon-minimize:hover {
+    transition: all 0.7s cubic-bezier(0.2, 0.3, 0, 0.49);
+    background-color: #666666;
+}
 .icon-restore-down:hover,
 .icon-maximize:hover {
     background-color: #00000000;
