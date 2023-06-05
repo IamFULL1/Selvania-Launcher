@@ -1,7 +1,7 @@
 {
   "name": "VicioLauncher",
-  "version": "1.2.9",
-  "description": "Vicio Launcher - Pixelmon server",
+  "version": "1.3.0",
+  "description": "Vicio Launcher - Pixelmon Server.",
   "main": "./out/main/index.js",
   "author": "meluiz.com",
   "homepage": "https://www.electronjs.org",
