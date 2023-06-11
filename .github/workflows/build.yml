@@ -1,8 +1,7 @@
-# module du helios launcher
 name: Launcher Build
 on:
   push:
-    branches: [ master ]
+    branches: [main]
 
 jobs:
   create-release:
@@ -13,12 +12,12 @@ jobs:
 
       - name: Get version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
-      
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           tag_name: ${{ env.version }}
           release_name: release ${{ env.version }}
@@ -41,6 +40,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
+          registry-url: 'https://registry.npmjs.org/'
+          scope: '@pnpm'
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -48,11 +49,11 @@ jobs:
           python-version: 3.x
 
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm ci
         shell: bash
 
       - name: Build
         env:
-          GH_TOKEN: ${{ secrets.github_token }}
-        run: npm run build
+          GH_TOKEN: ${{ secrets.TOKEN }}
+        run: pnpm run build
         shell: bash
